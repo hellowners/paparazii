@@ -22,6 +22,11 @@ const UserSchema = mongoose.Schema(
             type: Boolean,
             default: false,
         },
+        accountType: {
+            type: String,
+            required: true,
+            enum: ["business", "private"]
+            },
         profilePicture: String,
         coverPicture: String,
         about: String,
@@ -30,7 +35,7 @@ const UserSchema = mongoose.Schema(
         relationship: String,
         country: String,
         followers: [] ,
-        following: []
+        following: [],
     },
     {timestamps: true}
 )
